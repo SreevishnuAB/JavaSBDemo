@@ -1,0 +1,12 @@
+2021-08-31 10:00:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT" not found; SQL statement:
+select scholar0_.id as id1_0_, scholar0_.batch as batch2_0_, scholar0_.full_name as full_nam3_0_ from student scholar0_ [42102-200]
+2021-08-31 10:00:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT" not found; SQL statement:
+select scholar0_.id as id1_0_0_, scholar0_.batch as batch2_0_0_, scholar0_.full_name as full_nam3_0_0_ from student scholar0_ where scholar0_.id=? [42102-200]
+2021-08-31 10:18:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "STUDENT" not found; SQL statement:
+insert into student (id, batch, full_name) values (null, ?, ?) [42102-200]
+2021-08-31 10:19:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SCHOLAR" not found; SQL statement:
+insert into scholar (id, batch, full_name) values (null, ?, ?) [42102-200]
