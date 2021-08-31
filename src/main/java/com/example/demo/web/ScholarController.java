@@ -30,7 +30,7 @@ public class ScholarController {
   @PostMapping
   public HttpEntity<Scholar> addScholar(@RequestBody Scholar scholar){
     Scholar res;
-    logger.info("Request body:", scholar);
+    logger.info("Request body: " + scholar);
     HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
     if(scholarSrv.addScholar(scholar)){
       status = HttpStatus.CREATED;
@@ -52,7 +52,7 @@ public class ScholarController {
 
   @GetMapping("/{id}")
   public HttpEntity<Scholar> getScholarById(@PathVariable long id){
-    logger.info("Id:", id);
+    logger.info("Id: " + id);
     HttpStatus status = HttpStatus.NOT_FOUND;
     Optional<Scholar> opt = scholarSrv.getScholarById(id);
     Scholar res = new Scholar();
@@ -63,5 +63,12 @@ public class ScholarController {
     return new ResponseEntity<>(res, status);
   }
 
+  @GetMapping("/batch/{batch}")
+  public HttpEntity<List<Scholar>> getScholarsByBatch(@PathVariable String batch){
+    logger.info("Batch: " + batch);
+    HttpStatus status = HttpStatus.OK;
+    List<Scholar> res = scholarSrv.getScholarsByBatch(batch);
+    return new ResponseEntity<>(res, status);
+  }
   
 }

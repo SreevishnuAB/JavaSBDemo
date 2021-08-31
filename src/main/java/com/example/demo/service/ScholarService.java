@@ -67,7 +67,6 @@ public class ScholarService {
       return scholarRepository.findById(id);
 
     } catch (Exception e) {
-      //TODO: handle exception
       return Optional.empty();
     }
   }
